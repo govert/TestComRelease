@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test180", "Test180\Test180.csproj", "{476CF22A-0006-450C-ABE0-72672240B525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test190", "Test190\Test190.csproj", "{A05817C8-7383-46AD-83D1-903148084AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDriver", "TestDriver\TestDriver.csproj", "{5DA8439C-9152-4DD5-99C4-F642ACB52FA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{476CF22A-0006-450C-ABE0-72672240B525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476CF22A-0006-450C-ABE0-72672240B525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476CF22A-0006-450C-ABE0-72672240B525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476CF22A-0006-450C-ABE0-72672240B525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05817C8-7383-46AD-83D1-903148084AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05817C8-7383-46AD-83D1-903148084AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05817C8-7383-46AD-83D1-903148084AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05817C8-7383-46AD-83D1-903148084AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA8439C-9152-4DD5-99C4-F642ACB52FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA8439C-9152-4DD5-99C4-F642ACB52FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA8439C-9152-4DD5-99C4-F642ACB52FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA8439C-9152-4DD5-99C4-F642ACB52FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8274EC23-8EB9-4DDF-9ADE-A2E6A0F88865}
+	EndGlobalSection
+EndGlobal
