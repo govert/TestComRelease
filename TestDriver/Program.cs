@@ -78,7 +78,7 @@ namespace TestDriver
             // var Addins = app.AddIns2;
 
             // Register the add in
-            FileInfo xllInfo = new FileInfo(@"C:\Users\adaml\source\repos\EQFDevelopment\eqf\bin\Debug\net8.0-windows\EQFAddin32.xll");
+            FileInfo xllInfo;
 #if true
             if (test190)
             {
@@ -94,7 +94,7 @@ namespace TestDriver
                 //var Addin = Addins.Add(xllInfo.FullName);
 
                 //if (Addin == null)
-                //    throw new Exception("Unable to find EQF Addin");
+                //    throw new Exception("Unable to find Addin");
 
                 //if (Addin.Installed)
                 //{
