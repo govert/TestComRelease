@@ -9,5 +9,16 @@ namespace Test190
         {
             return "Hello from 190 " + name;
         }
+
+        public static void Macro1()
+        {
+            XlCall.Excel(XlCall.xlcAlert, "XLL Message 1", 2);
+        }
+
+        [ExcelCommand(MenuName = "Macros", MenuText = "Message")]
+        public static void Macro2()
+        {
+            XlCall.Excel(XlCall.xlcAlert, "XLL Message 2", 2);
+        }
     }
 }

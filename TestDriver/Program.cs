@@ -25,6 +25,11 @@ namespace TestDriver
             GC.Collect();
             GC.WaitForPendingFinalizers();
             Thread.Sleep(5000); // Wait a bit for Excel to exit
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            Thread.Sleep(5000); // Wait a bit for Excel to exit
             PrintExcelInstances("After TestExcelAddIn with Test190");
 
             Console.WriteLine("Done");
@@ -37,6 +42,7 @@ namespace TestDriver
             // using Application.RegisterXLL method.
 
             var app = new Application();
+#if ORIGINAL_CODE
             if (test190)
             {
                 app.RegisterXLL(@"C:\Temp\TestComRelease\Test190\bin\Debug\net8.0-windows\Test190-AddIn64.xll");
@@ -57,6 +63,58 @@ namespace TestDriver
 
             // Close Excel, without saving the workbook
             workbook.Close(SaveChanges: false);
+#else
+            var Workbooks = app.Workbooks;
+            foreach (dynamic rcw in Workbooks)
+            {
+                rcw.Close(SaveChanges: false);
+            }
+
+            var ConfigurationWorkbook = Workbooks.Add();
+            app.Calculation = Microsoft.Office.Interop.Excel.XlCalculation.xlCalculationManual;
+
+            // var props = ConfigurationWorkbook.CustomDocumentProperties;
+
+            // var Addins = app.AddIns2;
+
+            // Register the add in
+            FileInfo xllInfo = new FileInfo(@"C:\Users\adaml\source\repos\EQFDevelopment\eqf\bin\Debug\net8.0-windows\EQFAddin32.xll");
+#if true
+            if (test190)
+            {
+                xllInfo = new FileInfo(@"C:\Temp\TestComRelease\Test190\bin\Debug\net8.0-windows\Test190-AddIn64.xll");
+            }
+            else
+            {
+                xllInfo = new FileInfo(@"C:\Temp\TestComRelease\Test180\bin\Debug\net8.0-windows\Test180-AddIn64.xll");
+            }
+#endif
+            if (xllInfo.Exists)
+            {
+                //var Addin = Addins.Add(xllInfo.FullName);
+
+                //if (Addin == null)
+                //    throw new Exception("Unable to find EQF Addin");
+
+                //if (Addin.Installed)
+                //{
+                //    Addin.Installed = false;
+                //    Addin.Installed = true;
+                //}
+                //else
+                //{
+                //    Addin.Installed = true;
+                //}
+
+                //Addin.Installed = false;
+                app.RegisterXLL(xllInfo.FullName);
+                ConfigurationWorkbook.Close(SaveChanges: false);
+            }
+            else
+            {
+                throw new Exception($"File does not exist {xllInfo}");
+            }
+#endif
             app.Quit();
         }
 
